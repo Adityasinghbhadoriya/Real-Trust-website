@@ -36,28 +36,34 @@ export const Signup = async(req, res) => {
     }
 }
 
-export const login = async(req,res) =>{
-    const {email, password} = req.body;
-    try {
-        const admin =await Admin.findOne({email: email});
-        const isPasswordCorrect =await bcrypt.compare(password, admin.password);
-        
-        if(!admin || !isPasswordCorrect){
-            return res.status(403).json({message: "Invalid Credentials"})
-        }
+export const login = async (req, res) => {
+  const { email, password } = req.body;
 
-        const token = jwt.sign({
-            id: admin._id
-        }, config.JWT_ADMIN_PASSWORD)
-        
-        res.cookie("jwt", token)
-        return res.status(200).json({message: "Login Successful", admin, token});
+  try {
+    const admin = await Admin.findOne({ email: email });
 
-    } catch (error) {
-        console.log(error);
-        return res.status(400).json({message: "Error in Logging In", error});
+    
+    if (!admin) {
+      return res.status(403).json({ message: "Invalid Credentials" });
     }
-}
+
+    const isPasswordCorrect = await bcrypt.compare(password, admin.password);
+
+    if (!isPasswordCorrect) {
+      return res.status(403).json({ message: "Invalid Credentials" });
+    }
+
+    const token = jwt.sign({ id: admin._id }, config.JWT_ADMIN_PASSWORD);
+
+    res.cookie("jwt", token);
+    return res.status(200).json({ message: "Login Successful", admin, token });
+
+  } catch (error) {
+    console.log(error);
+    return res.status(400).json({ message: "Error in Logging In", error });
+  }
+};
+
 
 export const logout = async(req,res) => {
     try {
