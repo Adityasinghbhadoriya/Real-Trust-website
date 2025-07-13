@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from "react-router-dom";
 import toast from 'react-hot-toast';
-import { BACKEND_URL } from '../../utils/utils';
+import { BACKEND_URL } from '../../Utils/utils';
 
 function Login() {
   const [email, setEmail] = useState("");

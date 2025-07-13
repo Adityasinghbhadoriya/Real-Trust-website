@@ -3,7 +3,7 @@ import React from 'react'
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import dashBoardImage from '../assets/dashboard.png'
-import { BACKEND_URL } from '../../utils/utils';
+import { BACKEND_URL } from '../../Utils/utils';
 // import { BACKEND_URL } from '../../utils/utils';
 
 function AdminDashboard() {

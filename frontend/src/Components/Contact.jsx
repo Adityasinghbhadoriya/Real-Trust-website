@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import { BACKEND_URL } from '../../utils/utils';
+import { BACKEND_URL } from '../../Utils/utils';
 
 const Contact = () => {
 

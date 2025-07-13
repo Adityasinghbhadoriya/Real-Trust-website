@@ -8,7 +8,7 @@ import logo from '../assets/logo.svg'
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
-import { BACKEND_URL } from '../../utils/utils';
+import { BACKEND_URL } from '../../Utils/utils';
 
 const Footer = () => {
     const [email, setEmail] = useState("");

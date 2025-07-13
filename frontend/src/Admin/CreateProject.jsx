@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { BACKEND_URL } from '../../utils/utils.js';
+import { BACKEND_URL } from '../../Utils/utils.js';
 
 function CreateProject() {
   const [name, setName] = useState("");

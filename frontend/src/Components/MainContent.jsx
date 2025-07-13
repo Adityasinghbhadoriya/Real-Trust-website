@@ -6,7 +6,7 @@ import groupOfCircles from '../assets/Group 1.svg'
 import rightFullCircle from '../assets/Ellipse 21.svg'
 import blueCircle from '../assets/Ellipse 26.svg'
 import orangeCircle from '../assets/Ellipse 25-1.svg'
-import { BACKEND_URL } from '../../utils/utils';
+import { BACKEND_URL } from '../../Utils/utils';
 
 
 const MainContent = () => {

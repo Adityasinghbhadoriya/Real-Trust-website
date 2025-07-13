@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import { BACKEND_URL } from '../../utils/utils.js';
+import { BACKEND_URL } from '../../Utils/utils.js';
 
 function UpdateProject() {
   const { id } = useParams();
